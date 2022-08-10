@@ -3,7 +3,7 @@
 
 ### version 1.0
 ### 语言: c++
-### 平台: visual studio
+### 平台: visual studio 2017
 ### 消息定义: 结构体消息
 ### 技术点：
 1. 服务端和客户端的select模型
@@ -22,10 +22,10 @@
 
 ### version 2.0
 ### 语言: c++
-### 平台: visual studio
+### 平台: visual studio 2017
 ### 消息定义: 结构体消息
 ### 技术点：
-1. 使用vs studio 性能探测器，发现资源消耗主要有三部分：select拷贝、recv、send
+1. 使用visual studio 性能探测器，发现资源消耗主要有三部分：select拷贝、recv、send
    * 使用fd_set_copy 保存上一次的fd集合, 若没有新的客户端加入或退出, 默认使用副本进行传递，节约了每次重置fd_set的资源
    * 测试服务器单发单收的能力，发现：recv > send,  因此分离收发业务，提高性能
 2. 服务端为发送业务添加定时发送和定量发送功能
